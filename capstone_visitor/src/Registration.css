@@ -1,0 +1,266 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.main-container3 {
+  background-color: #1A1851;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.top-container1 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 85px;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 2px solid white;
+}
+
+.main-title {
+  color: #FCB315;
+  font-size: 45px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.mid1-container {
+  width: 100%;
+  height: 40px;
+  background-color: #1A1851;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mid1-text {
+  color: #FCB315;
+  font-size: 17px;
+  letter-spacing: 5px;
+  font-weight: 900;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.bottom-container {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 130px);
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.left-container,
+.right-container {
+  position: relative;
+  display: flex;
+  width: 500px;
+  height: 98%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-container .left-container {
+  margin-left: 3px;
+}
+
+.bottom-container .right-container {
+  margin-right: 3px;
+}
+
+.m-box {
+  display: flex;
+  width: 90%;
+  height: 90%;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: white;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.m-box-title {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #1A1851;
+  font-family: 'Poppins', sans-serif;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-fields {
+  width: 100%;
+  height: 70px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  background-color: #FCB315;
+  color: black;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}
+
+.r-submit-button {
+  align-self: flex-end;
+  padding: 10px 20px;
+  background-color: #1A1851;
+  color: #FCB315;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+.r-submit-button:hover {
+  background-color: #FCB315;
+  color: #1A1851;
+}
+
+.l-box-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #1A1851;
+  font-family: 'Poppins', sans-serif;
+}
+
+.notice {
+  margin-top: 10px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: #1A1851;
+  font-weight: bold;
+}
+
+.notice p {
+  margin: 5px 0;
+}
+
+.notice2 {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: #f50d0d;
+  font-weight: bold;
+  font-size: 23px;
+  margin-top: auto;
+  letter-spacing: 2px;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Keyframes for sliding text */
+@keyframes slideLeftToRight {
+  0% {
+    transform: translateX(-100%); /* Starts off-screen to the right */
+  }
+  100% {
+    transform: translateX(100%); /* Ends off-screen to the left */
+  }
+}
+
+/* The text to be animated */
+.mid1-container .mid1-text {
+  color: #FCB315;
+  font-size: 18px;
+  letter-spacing: 5px;
+  font-weight: 900;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  white-space: nowrap; /* Prevents the text from wrapping to a new line */
+  display: inline-block; /* Makes the text behave like an inline-block element */
+  animation: slideLeftToRight 20s linear infinite; /* Apply the animation */
+}
+
+.user-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Adjust the width to 80% of the parent container */
+  height:70px;
+  padding: 15px 0; /* Add padding for better button height */
+  background-color: #1A1851;
+  color: #FCB315;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.user-type:hover {
+  background-color: #FCB315; /* Change background on hover */
+  color: #1A1851; /* Change text color on hover */
+}
+
+.back-button-container {
+  position: absolute; /* Position absolutely within left-container */
+  top: 10px; /* Distance from the top */
+  left: 10px; /* Distance from the left */
+  cursor: pointer; /* Make the cursor a pointer to indicate it's clickable */
+}
+
+.back-icon {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.back-icon:hover {
+  color: #FCB315;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column; /* Stack the buttons vertically */
+  align-items: center; /* Center them horizontally */
+  justify-content: center; /* Center them vertically */
+  gap: 20px; /* Add space between the buttons */
+  width: 100%; /* Ensure the container takes the full width */
+}
+
+.full-screen-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: dim the background */
+  z-index: 9999;
+}
+
+.full-screen-image img {
+  max-width: 80%;
+  max-height: 80%;
+}
