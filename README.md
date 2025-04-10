@@ -50,3 +50,6 @@ D. INSTALL PHPMYADMIN
         pi@raspberrypi:~ $ sudo chown -R pi:www-data /var/www/html/
         pi@raspberrypi:~ $ sudo chmod -R 770 /var/www/html/
         pi@raspberrypi:~ $ ls -lh /var/www/
+
+
+FOR MORE DETAILED STEP, PLEASE REFER TO THIS LINK (https://randomnerdtutorials.com/raspberry-pi-apache-mysql-php-lamp-server/?fbclid=IwZXh0bgNhZW0CMTEAAR4ljZg94Iz0LGoeBKls15Co4qsEKSbwP3_GYD5Js7hMFXO9LOc2uYUSKoX-AA_aem_9Qj7xHBVkb-GhW9dv8pqWg)
