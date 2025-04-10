@@ -1,61 +1,52 @@
-APPENDIX A: USER MANUAL
-A Smart Scanning Academia: An IoT-Based Monitoring System at the
-University of Science and Technology of Southern Philippines - CDO Campus is
-developed to efficiently monitor the total number of students, employees, and visitors
-within the university. By tracking the entry and exit of individuals and logging the exact
-time of these events, the system enables the collection of time-stamped data for accurate
-and real-time monitoring of campus activity.
-This user manual serves as a comprehensive guide for utilizing the system’s
-features effectively. It provides clear instructions tailored to specific user roles—students,
-employees, visitors, and administrators—ensuring seamless interaction with the system
-for logging, monitoring, and generating reports. By following the manual, users can
-maximize the system's potential to enhance campus safety and operational efficiency.
+Installation of Dependencies
 
-A. Smart Scanning Academia Admin Manual
-a. The main interface of Smart Scanning Academia.
-b. To view log records, click the “VIEW RECORDS” button.
+A. RPI Installation
+    1.0 UPDATING THE OS
+        pi@raspberrypi:~ $ sudo apt update && sudo apt upgrade -y
+    2.0 APCAHE INSTALLATION
+        pi@raspberrypi:~ $ sudo apt install apache2 -y
+    3.0 TEST INSTALLATION
+        pi@raspberrypi:~ $ cd /var/www/html
+        pi@raspberrypi:/var/www/html $ ls -al
+        index.html
+    3.1 IDENTIFY USER
+        pi@raspberrypi:/var/www/html $ hostname -I
+        
+B. PHP INSTALLATION
+    1.0 INSTALL PHP
+        pi@raspberrypi:/var/www/html $ sudo apt install php -y
+    2.0 REMOVE index.html and CREATE PHP script
+        pi@raspberrypi:/var/www/html $ sudo rm index.html
+        pi@raspberrypi:/var/www/html $ sudo nano index.php
+    3.0 RESTART APACHE2
+        pi@raspberrypi:/var/www/html $ sudo service apache2 restart
 
-c. Before viewing records:
-i. The admin needs to log in.
-ii. If the admin already has an account, enter the required details on the login
-page.
+C. INSTALL MYSQL
+    1.0 INSTALL MYSQL
+        pi@raspberrypi:/var/www/html $ sudo apt install mariadb-server php-mysql -y
+        pi@raspberrypi:/var/www/html $ sudo service apache2 restart
+    2.0 SECURE RUN COMMAND
+        pi@raspberrypi:/var/www/html $ sudo mysql_secure_installation
+    3.0 CREATE NEW USER (OPTIONAL)
+        pi@raspberrypi:/var/www/html $ sudo mysql --user=root --password
+        > create user admin@localhost identified by 'your_password';
+        > grant all privileges on *.* to admin@localhost;
+        > FLUSH PRIVILEGES;
+        > exit;
 
-d. If the admin doesn't have an account, click “Add Admin User” and fill in the
-required details to create a new account.
-
-e. General Log Entries:
-i. This page shows records for students, employees, and visitors.
-ii. To generate these records, click “GENERATE RECORDS”.
-
-f. Specific College Log Entries:
-i. This page shows records for students, employees, and visitors from a
-specific college.
-ii. To generate these records, click “GENERATE RECORDS”.
-
-g. Specific Department Log Entries:
-i. This page shows records for students, employees, and visitors from a
-specific department.
-ii. To generate these records, click “GENERATE RECORDS”.
-
-h. After generating the records, a PDF form will pop up.
-i. To view the log records:
-i. Click on the downloaded PDF form to open and view the "Log Records".
-
-B. Students, Employees, and Visitors Registration
-
-a. This is the interface for the registration to generate QR Code.
-
-b. Employees and students can register here to generate a new QR code if their
-original QR code is damaged or left at home.
-
-c. To register a visitor:
-i. Click the “VISITOR” button to go to the registration page.
-ii. Fill in the required details for the visitor.
-
-d. To register an employee:
-i. Click the “EMPLOYEE” button to go to the registration page.
-ii. Fill in the necessary details.
-
-e. To register a student:
-i. Click the "STUDENT" button to go to the registration page.
-ii. Students need to enter the required details shown on the page, including their ID Number.
+D. INSTALL PHPMYADMIN
+    1.0 Installation
+        pi@raspberrypi:/var/www/html $ sudo apt install phpmyadmin -y
+    2.0 ENABLE APACHE2 and RESTART 
+        pi@raspberrypi:/var/www/html $ sudo phpenmod mysqli
+        pi@raspberrypi:/var/www/html $ sudo service apache2 restart
+    3.0 move the phpmyadmin folder to /var/www/html
+        pi@raspberrypi:/var/www/html $ sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin    
+    4.0 VERIFY LIST
+        pi@raspberrypi:/var/www/html $ ls
+        phpmyadmin
+    5.0 MANAGE PERMISSION (OPTIONAL)
+        pi@raspberrypi:~ $ ls -lh /var/www/
+        pi@raspberrypi:~ $ sudo chown -R pi:www-data /var/www/html/
+        pi@raspberrypi:~ $ sudo chmod -R 770 /var/www/html/
+        pi@raspberrypi:~ $ ls -lh /var/www/
